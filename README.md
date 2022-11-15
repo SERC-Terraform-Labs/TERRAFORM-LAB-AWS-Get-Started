@@ -1,18 +1,19 @@
-# TERRAFORM LABS Starter Template
+# Terraform Lab - AWS Get Started
 
-Starter template for creating Terraform labs.
+Introduction to Terraform basics by building, changing, and destroying infrastructure on AWS. In this lab you will:
 
-Description of lab.
+- Create AWS infrastructure by using `terraform init`, `terraform plan`, and `terraform apply`.
+- Change AWS infrastructure by using `terraform plan` and `terraform apply`.
+- Destroy AWS infrastructure by using `terraform destroy`.
+- Use input variables to customize your infrastructure.
+- Use output values to display important information about your infrastructure.
+- (Use Terraform Cloud to store state and run Terraform in the cloud.)
 
-In this lab you will:
-
-- ILO
-- ILO
-- ILO
+This lab is based on the tutorial https://developer.hashicorp.com/terraform/tutorials/aws-get-started.
 
 Add changes to version control as you go through the steps in the tutorial. This will make it easier to see which configuration settings have changed.
 
-> **Warning:** Not sure if all the AWS or Azure resources provisioned in this tutorial are covered by the free tier (NAT gateway definitely isn't). There may be some small charges. If you leave resources provisioned and don't `terraform destroy` at the end, there definitely will be charges.
+> **Warning:** Not sure if all the AWS resources provisioned in this tutorial are covered by the free tier (NAT gateway definitely isn't). There may be some small charges. If you leave resources provisioned and don't `terraform destroy` at the end, there definitely will be charges.
 
 <details><summary>AWS CLI Credentials</summary>
 
@@ -94,4 +95,6 @@ secret_key: mock_secret_key
 
 </details>
 
-## Lab Steps
+## 1. Build Infrastructure
+
+Start with the 'Build Infrastructure' section of the tutorial: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build
