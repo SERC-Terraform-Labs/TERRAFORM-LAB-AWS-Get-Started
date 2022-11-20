@@ -75,8 +75,15 @@ Instead of applying changes to the real AWS, we can create a fake, local version
 LocalStack is already installed in the Codespace. To start the LocalStack container, run the following command in the terminal:
 
 ```bash
-sudo localstack start
+sudo localstack start -d
 ```
+
+> **Note**: If you have problems running the `localstack` command, you can start LocalStack directly using Docker:
+> 
+> ```bash
+> docker run --rm -it -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack
+> ```
+> 
 
 ### Configure Terraform Resource Provider
 
