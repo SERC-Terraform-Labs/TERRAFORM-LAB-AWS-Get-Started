@@ -13,14 +13,53 @@ This lab is based on the tutorial https://developer.hashicorp.com/terraform/tuto
 
 Add changes to version control as you go through the steps in the tutorial. This will make it easier to see which configuration settings have changed.
 
-> **Warning:** Not sure if all the AWS resources provisioned in this tutorial are covered by the free tier (NAT gateway definitely isn't). There may be some small charges. If you leave resources provisioned and don't `terraform destroy` at the end, there definitely will be charges.
+### Lab Setup and Prerequisites
+
+The lab includes template settings for a [Codespace](https://docs.github.com/en/codespaces/getting-started/quickstart) preconfigured with the necessary software to run the lab. This includes an install of [LocalStack](https://github.com/localstack/localstack) to mock AWS services locally so that an AWS account is not needed.
+
+If you do not want to use a Codespace, you will need to install and run the following software locally:
+
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- [Terraform CLI](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+- [LocalStack](https://github.com/localstack/localstack) (optional)
+
+If you want to deploy infrastructure to AWS during the lab, you will need an AWS account and you will need to configure the AWS CLI with your credentials.
+
+- [AWS account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+
+> **Warning**: Some of the AWS resources provisioned in this tutorial may not be covered by the [AWS free tier](https://aws.amazon.com/free). There may be some small charges incurred running the lab on AWS. If you leave resources provisioned and don't `terraform destroy` at the end, there definitely will be charges. Any charges incurred are solely your responsibility.
+
+<details><summary>Launch Codespace</summary>
+
+You need a GitHub account to use Codespaces and you need to be logged in.
+
+If you have accepted a GitHub Classroom assignment, you can launch a Codespace by clicking the green "Code" button and selecting "Open with Codespaces". This will create a Codespace preconfigured with the necessary software to run the lab. Further instructions are available in the [GitHub Docs](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository).
+
+If you are following directly from the lab template repository, you can launch a Codespace by clicking the green "Use this template" button and selecting "Open with Codespaces". This will create a Codespace preconfigured with the necessary software to run the lab. Further instructions are available in the [GitHub Docs](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository).
+
+</details>
 
 <details><summary>AWS CLI Credentials</summary>
+
+### Create Access Keys
+
+1. Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/.
+1. In the navigation pane, choose Users.
+1. Choose your IAM user name (not the check box).
+1. Choose the Security credentials tab and then choose Create access key.
+1. To view the new access key pair, choose Show. You will not have access to the secret access key again after this dialog box closes. Your credentials will look something like this:
+
+```bash
+AWS Access Key ID: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+```
+
+### Configure the AWS CLI
 
 You will need to add your AWS Access Keys to the AWS CLI client. Configure the AWS CLI from the terminal. Follow the prompts to input your AWS Access Key ID and Secret Access Key.
 
 ```bash
-$ aws configure
+aws configure
 ```
 
 The configuration process stores your credentials in a file at `~/.aws/credentials` within the Codespace workspace.
