@@ -1,6 +1,8 @@
 # Terraform Lab - AWS Get Started
 
-Introduction to Terraform basics by building, changing, and destroying infrastructure on AWS. In this lab you will:
+Introduction to Terraform basics by building, changing, and destroying infrastructure on Amazon Web Services (AWS). You will use `terraform` to provision an EC2 instance (virtual machine) on AWS.
+
+In this lab you will:
 
 - Create AWS infrastructure by using `terraform init`, `terraform plan`, and `terraform apply`.
 - Change AWS infrastructure by using `terraform plan` and `terraform apply`.
